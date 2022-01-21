@@ -44,7 +44,7 @@ namespace RoomexTechnicalTest.Api.Middleware {
                     };
                 }
                 else {
-                    response = $"A server error occurred: {exception.Message}";
+                    response = "An internal error occurred. If the problem persists, contact your administrator";
                     _logger.LogError(exception, exception.Message);
                 }
 
