@@ -45,10 +45,11 @@ namespace RoomexTechnicalTest.Api.Middleware {
                 }
                 else {
                     response = "An internal error occurred. If the problem persists, contact your administrator";
-                    _logger.LogError(exception, exception.Message);
                 }
 
                 await WriteResponse(httpContext, response, StatusCodes.Status500InternalServerError);
+                _logger.LogError(exception, exception.Message);
+
             }
         }
 
