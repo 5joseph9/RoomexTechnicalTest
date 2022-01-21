@@ -32,9 +32,7 @@ namespace RoomexTechnicalTest.Api.Middleware {
                         error.AttemptedValue))
                 };
 
-                httpContext.Response.ContentType = "application/json";
-                httpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-                await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
+                await WriteResponse(httpContext, response, StatusCodes.Status400BadRequest);
             }
             else {
                 object response;
@@ -50,10 +48,14 @@ namespace RoomexTechnicalTest.Api.Middleware {
                     _logger.LogError(exception, exception.Message);
                 }
 
-                httpContext.Response.ContentType = "application/json";
-                httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
-                await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
+                await WriteResponse(httpContext, response, StatusCodes.Status500InternalServerError);
             }
+        }
+
+        private async Task WriteResponse(HttpContext httpContext, object response, int statusCode) {
+            httpContext.Response.ContentType = "application/json";
+            httpContext.Response.StatusCode = statusCode;
+            await httpContext.Response.WriteAsync(JsonSerializer.Serialize(response));
         }
     }
 }
