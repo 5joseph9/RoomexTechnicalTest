@@ -1,14 +1,11 @@
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
-using RoomexTechnicalTest.Api.IntegrationTests.Models;
 using RoomexTechnicalTest.Api.IntegrationTests.Models.Responses;
 using RoomexTechnicalTest.Application.Features.GeoLocation.Command.CalculateGeoDistance;
 using RoomexTechnicalTest.Application.Models.GeoLocation;
