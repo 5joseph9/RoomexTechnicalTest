@@ -5,10 +5,13 @@ using RoomexTechnicalTest.Application.Features.GeoLocation.Command.CalculateGeoD
 using RoomexTechnicalTest.Application.Models.GeoLocation;
 using Xunit;
 
-namespace RoomexTechnicalTest.Application.UnitTests.GeoLocation.Command {
-    public class CalculateGeoDistanceTest {
+namespace RoomexTechnicalTest.Application.UnitTests.GeoLocation.Command
+{
+    public class CalculateGeoDistanceTest
+    {
         [Fact]
-        public async Task Handle_CalculateDistance() {
+        public async Task Handle_CalculateDistance()
+        {
             var handler = new CalculateGeoDistanceCommandHandler();
 
             var distance = await handler.Handle(new CalculateGeoDistanceCommand(
