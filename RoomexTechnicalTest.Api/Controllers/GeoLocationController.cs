@@ -7,7 +7,7 @@ namespace RoomexTechnicalTest.Api.Controllers {
 
     [ApiController]
     [ApiVersion("1.0")]
-    [ProducesResponseType(typeof(string), 500)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
     [Route("api/v{api-version:apiVersion}/[controller]")]
 
     public class GeoLocationController : ControllerBase {
